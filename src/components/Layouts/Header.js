@@ -89,7 +89,7 @@ localStorage.setItem("darkMode", JSON.stringify(darkMode));
 </nav>
 
 
-{searchSection && <Search/>}
+{searchSection && <Search SetSearchSection={SetSearchSection}/>}
 </header>
   )
 }
