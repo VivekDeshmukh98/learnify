@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# 📚 Learnify – eBook Marketplace  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-18-blue?logo=react)  
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38B2AC?logo=tailwindcss)  
+![React Router](https://img.shields.io/badge/React%20Router-6-CA4245?logo=reactrouter)  
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)  
+![Status](https://img.shields.io/badge/Status-In%20Progress-orange)  
 
-## Available Scripts
+**Learnify** is a modern eBook marketplace where users can discover, search, and purchase eBooks across various categories.  
+The platform features a clean UI, dark mode, and responsive design for a seamless learning experience.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📑 Table of Contents
+- [✨ Features](#-features)  
+- [📸 Screenshots](#-screenshots)  
+- [🚀 Getting Started](#-getting-started)  
+  - [Run Locally](#run-locally)  
+  - [Build for Production](#build-for-production)  
+- [🛠 Tech Stack](#-tech-stack)  
+- [🔮 Future Improvements](#-future-improvements)  
+- [🤝 Contributing](#-contributing)  
+- [📜 License](#-license)  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
+- 🔎 Browse and search eBooks  
+- 📖 View detailed product pages  
+- 🛒 Add to cart and checkout  
+- 🔐 User authentication (login/logout)  
+- 🌙 Dark mode support  
+- 📱 Responsive and accessible UI  
+- 💬 Testimonials and FAQ section  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📸 Screenshots
+- **Home Page**  
+- **Product List Page**  
+- **Product Detail Page**  
+- **Cart Page**  
 
-### `npm run build`
+*(Add screenshots in a `/screenshots` folder and reference them here)*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Run Locally
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/learnify.git
 
-### `npm run eject`
+# Navigate to project folder
+cd learnify
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Install dependencies
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Start development server
+npm start
