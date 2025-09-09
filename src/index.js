@@ -5,6 +5,7 @@ import App from "./App";
 import { ScrollToTop } from "./components";
 import { BrowserRouter as Router } from "react-router-dom";
 import { FilterProvider } from "./context";
+ import { ToastContainer } from 'react-toastify';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <Router>
       <FilterProvider>
         <ScrollToTop />
+        <ToastContainer/>
         <App />
       </FilterProvider>
     </Router>
