@@ -11,6 +11,9 @@ export const Header = () => {
     JSON.parse(localStorage.getItem("darkMode")) || false
   );
 
+  const token=JSON.parse(sessionStorage.getItem("token"));
+  console.log(token);
+
   const [searchSection, SetSearchSection] = useState(false);
 
   const [dropdown, setDropdown] = useState(false);
@@ -108,7 +111,9 @@ export const Header = () => {
                   />
                 </svg>
               </span>
-                    {dropdown && <DropdownLoggedIn />}
+                    {/* {dropdown && (<DropdownLoggedOut />)} */}
+                    {dropdown && ( token?<DropdownLoggedIn setDropdown={setDropdown} />: <DropdownLoggedOut  setDropdown={setDropdown}/>)}
+                    {/* {dropdown && (token?  <DropdownLoggedIn />: <DropdownLoggedOut />)} */}
 
             </div>
           </div>
