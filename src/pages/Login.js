@@ -1,11 +1,45 @@
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 export const Login = () => {
+
+  const navigate=useNavigate();
+  const email= useRef();
+  const password= useRef();
+  async function handlelogin(event) {
+    event.preventDefault();
+    const authDetail={
+      email: email.current.value,
+      password: password.current.value
+    }
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(authDetail)
+};
+
+const response= await fetch("http://localhost:8000/login",requestOptions);
+
+const data=await response.json();
+  data.accessToken ?  navigate("/products") :toast.error(data);
+  console.log(data);
+
+  if(data.accessToken){
+    sessionStorage.setItem("token",JSON.stringify(data.accessToken));
+    sessionStorage.setItem("cbid", JSON.stringify(data.user.id));
+    
+}
+  }
+
+
   return (
     <main className="flex justify-center items-start min-h-screen text-gray-900 dark:text-slate-200 px-4 pt-20">
       <section className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
         <p className="text-2xl text-center font-semibold dark:text-slate-100 mb-8 underline underline-offset-8">
           Login
         </p>
-        <form className="space-y-6">
+        <form onSubmit={handlelogin} className="space-y-6">
           <div>
             <label
               htmlFor="email"
@@ -14,6 +48,7 @@ export const Login = () => {
               Your email
             </label>
             <input
+            ref={email}
               type="email"
               id="email"
               placeholder="shubham@example.com"
@@ -35,6 +70,7 @@ export const Login = () => {
               Your password
             </label>
             <input
+            ref={password}
               type="password"
               id="password"
               required
@@ -66,4 +102,4 @@ export const Login = () => {
       </section>
     </main>
   );
-};
+}

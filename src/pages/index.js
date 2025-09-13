@@ -5,3 +5,4 @@ export { ProductDetail} from './ProductDetail'
 
 export {Login} from '../pages/Login'
 export {Register} from '../pages/Register'
+export {CartPage} from '../pages/Cart/CartPage'

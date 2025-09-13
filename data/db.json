@@ -244,6 +244,12 @@
       "password": "$2a$10$9DEp5e.HJ3MmPvQHaG.vw.WgC/hn1eI7dt7OuRr1WbBBjyb07YIBi",
       "name": "Vivek",
       "id": 1
+    },
+    {
+      "email": "vvkd98@gmail.com",
+      "password": "$2a$10$YGpHcF3RTxmnLC9Q76Lyy.HaPGH9nt.MX50EFntPPhlGuqgoQn3oi",
+      "name": "Vivek",
+      "id": 2
     }
   ]
 }

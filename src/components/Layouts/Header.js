@@ -5,11 +5,17 @@ import { Link } from "react-router-dom";
 import { Search } from "../Sections/Search";
 import { DropdownLoggedIn } from "../Elements/DropdownLoggedIn";
 import { DropdownLoggedOut } from "../Elements/DropdownLoggedOut";
+import { useCart } from "../../context";
 
 export const Header = () => {
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || false
   );
+
+  const {cartList}=useCart();
+
+  const token=JSON.parse(sessionStorage.getItem("token"));
+  console.log(token);
 
   const [searchSection, SetSearchSection] = useState(false);
 
@@ -88,7 +94,7 @@ export const Header = () => {
 
                 {/* Badge */}
                 <span className="text-white text-xs absolute -top-1 -right-2 bg-rose-500 px-1 rounded-full">
-                  0
+                  {cartList.length}
                 </span>
               </div>
             </Link>
@@ -108,7 +114,9 @@ export const Header = () => {
                   />
                 </svg>
               </span>
-                    {dropdown && <DropdownLoggedIn />}
+                    {/* {dropdown && (<DropdownLoggedOut />)} */}
+                    {dropdown && ( token?<DropdownLoggedIn setDropdown={setDropdown} />: <DropdownLoggedOut  setDropdown={setDropdown}/>)}
+                    {/* {dropdown && (token?  <DropdownLoggedIn />: <DropdownLoggedOut />)} */}
 
             </div>
           </div>
