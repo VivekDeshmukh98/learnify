@@ -4,7 +4,7 @@ import {HomePage} from '../pages/Home/HomePage'
 import { ProductsList ,ProductDetail} from '../pages'
 import {Login} from '../pages/index'
 import {Register} from '../pages/index'
-
+import {CartPage} from '../pages/Cart/CartPage'
 
 export const AllRoutes = () => {
   return (
@@ -15,6 +15,8 @@ export const AllRoutes = () => {
 
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/cart" element={<CartPage />} />
+
     </Routes>
   )
 }
