@@ -250,6 +250,12 @@
       "password": "$2a$10$YGpHcF3RTxmnLC9Q76Lyy.HaPGH9nt.MX50EFntPPhlGuqgoQn3oi",
       "name": "Vivek",
       "id": 2
+    },
+    {
+      "email": "alex@a.com",
+      "password": "$2a$10$xjgfXCnCPAAQuyE3U0sRMO.sVsuZCiAAzjFaHYiMS1hFYIZvjP9jO",
+      "name": "Alex",
+      "id": 3
     }
   ]
 }
