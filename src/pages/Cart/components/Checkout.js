@@ -23,7 +23,7 @@ export const Checkout = ({ setCheckOut }) => {
       const data = await response.json();
       setUser(data);
     }
-z
+
     getUser();
   }, [cbid, token]);
 
