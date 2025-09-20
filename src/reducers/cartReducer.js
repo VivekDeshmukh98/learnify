@@ -13,8 +13,11 @@ case "ADD_TO_CART":
             return {...state,cartList:payload.products,total:payload.total};
 
         case "CLEAR_CART":
-            return {...state,cartList:[],total:payload.total=0};
-
+           return {
+        ...state,
+        cartList: [],
+        total: 0   // ✅ directly reset, no payload needed
+      };
 
             default:
                 throw new Error(`Unknown action type: ${type}`);
