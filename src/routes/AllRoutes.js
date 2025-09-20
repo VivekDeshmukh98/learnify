@@ -6,6 +6,7 @@ import {Login} from '../pages/index'
 import {Register} from '../pages/index'
 import {CartPage} from '../pages/Cart/CartPage'
 import { ProtectedRoutes } from './ProtectedRoutes'
+import { OrderPage } from '../pages/Order/OrderPage'
 
 export const AllRoutes = () => {
   // const token=true;
@@ -21,6 +22,12 @@ export const AllRoutes = () => {
       <Route path="/cart" element={
         <ProtectedRoutes>
         <CartPage />
+        </ProtectedRoutes>
+        } />
+
+              <Route path="/order-summary" element={
+        <ProtectedRoutes>
+        <OrderPage />
         </ProtectedRoutes>
         } />
 
