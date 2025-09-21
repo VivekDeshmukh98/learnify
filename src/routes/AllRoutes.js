@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "../pages/Home/HomePage";
-import { ProductsList, ProductDetail, DashboardPage } from "../pages";
+import { PageNotFound,ProductsList, ProductDetail, DashboardPage } from "../pages";
 import { Login } from "../pages/index";
 import { Register } from "../pages/index";
 import { CartPage } from "../pages/Cart/CartPage";
@@ -45,6 +45,8 @@ export const AllRoutes = () => {
           </ProtectedRoutes>
         }
       />
+
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };

@@ -10,3 +10,5 @@ export {CartPage} from '../pages/Cart/CartPage'
 export {OrderPage} from '../pages/Order/OrderPage' 
 
 export {DashboardPage} from '../pages/Dashboard/DashboardPage'
+
+export {PageNotFound} from '../pages/PageNotFound'
