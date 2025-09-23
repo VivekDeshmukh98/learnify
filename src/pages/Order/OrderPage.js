@@ -1,11 +1,12 @@
 import { OrderFail } from "./components/OrderFail"
 import { OrderSuccess } from "./components/OrderSuccess"
 import { useLocation } from "react-router-dom"
+import {useTitle} from '../../../src/hooks/useTitle'
 
 export const OrderPage = () => {
 
     const {state}=useLocation();
-
+    useTitle('Order Status');
 
   return (
     <main>
