@@ -5,6 +5,7 @@ import { useFilter } from "../../context";
 import { ProductCard } from "../../components";
 import { FilterBar } from "./components/FilterBar";
 import { getProductList } from "../../services";
+import { toast } from "react-toastify";
 
 
 export const ProductsList = () => {
@@ -16,8 +17,18 @@ export const ProductsList = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const data= await getProductList(searchTerm);
+      try{
+const data= await getProductList(searchTerm);
       initialProductList(data);
+      }
+      catch(e){
+        console.error("Error fetching products:", e);
+        // toast.error(toast.error(`Error ${e.message}`));
+      toast.error(e.message,{
+        position: "top-center"
+      });
+      }
+      
     }
     fetchProducts();
   }, [initialProductList, searchTerm]);
@@ -51,6 +62,7 @@ export const ProductsList = () => {
         </div>
 
         <div className="flex flex-wrap justify-center lg:flex-row">
+          
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

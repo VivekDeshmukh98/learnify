@@ -11,7 +11,9 @@ export const Register = () => {
 
   async function handleRegister(event) {
     event.preventDefault();
-    const authDetail = {
+
+    try {
+     const authDetail = {
       name: event.target.name.value,
       email: event.target.email.value,
       password: event.target.password.value,
@@ -19,7 +21,13 @@ export const Register = () => {
 
     const data = await register(authDetail);
     data.accessToken ? navigate("/products") : toast.error(data);
-  }
+   
+    } catch (error) {
+      toast.error(error.message, {
+        position: "top-center",
+      });
+    }
+     }
 
   return (
     <main className="flex justify-center items-start min-h-screen  text-gray-900 dark:text-slate-200 px-4 pt-20">

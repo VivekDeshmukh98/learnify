@@ -15,7 +15,7 @@ export const Header = () => {
   const {cartList}=useCart();
 
   const token=JSON.parse(sessionStorage.getItem("token"));
-  console.log(token);
+  // console.log(token);
 
   const [searchSection, SetSearchSection] = useState(false);
 
