@@ -5,8 +5,14 @@ export async function login(authDetail) {
     body: JSON.stringify(authDetail),
   };
 
-  const response = await fetch("http://localhost:8000/login", requestOptions);
+  const response = await fetch(`${process.env.REACT_APP_HOST}/login`, requestOptions);
 
+    if(!response.ok){
+        // eslint-disable-next-line no-throw-literal
+        throw {message: response.statusText,
+          status: response.status
+        };
+      }
   const data = await response.json();
 
   if (data.accessToken) {
@@ -25,9 +31,16 @@ export async function register(authDetail) {
   };
 
   const response = await fetch(
-    "http://localhost:8000/register",
+    `${process.env.REACT_APP_HOST}/register`,
     requestOptions
   );
+
+    if(!response.ok){
+        // eslint-disable-next-line no-throw-literal
+        throw {message: response.statusText,
+          status: response.status
+        };
+      }
   const data = await response.json();
   if (data.accessToken) {
     sessionStorage.setItem("token", JSON.stringify(data.accessToken));

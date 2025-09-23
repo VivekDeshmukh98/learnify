@@ -3,25 +3,37 @@ import { logout } from "../../services/authService";
 import { useEffect } from "react";
 import { getUser } from "../../services/dataService";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export const DropdownLoggedIn = ({ setDropdown }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
   
-  useEffect(()=>{
-        async function fetchData(){
-            const data= await getUser();
-            data.email?setUser(data):handleLogOut();
-        }
-fetchData();
-    },[]);
-
-
   function handleLogOut() {
     logout();
     setDropdown(false);
     navigate("/");
   }
+
+  useEffect(()=>{
+        async function fetchData(){
+
+
+          try {
+              const data= await getUser();
+            data.email?setUser(data):handleLogOut();
+          } catch (error) {
+            toast.error(error.message, {
+                    position: "top-center",
+                  });
+          }
+
+
+          
+        }
+fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
   return (
     <div
       id="dropdownAvatar"

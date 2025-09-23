@@ -16,9 +16,15 @@ export async function getUser() {
   };
 
   const response = await fetch(
-    `http://localhost:8000/600/users/${browserData.cbid}`,
+    `${process.env.REACT_APP_HOST}/600/users/${browserData.cbid}`,
     requestOptions
   );
+        if(!response.ok){
+        // eslint-disable-next-line no-throw-literal
+        throw {message: response.statusText,
+          status: response.status
+        };
+      }
   const data = await response.json();
   return data;
 }
@@ -26,10 +32,11 @@ export async function getUser() {
 export async function getUserOrders() {
    const browserData=getSession();
 
-      const response = await fetch(`http://localhost:8000/660/orders?user.id=${browserData.cbid}`, {
+   const requestOptions = {
             method: "GET",
             headers: {"Content-Type": "application/json", Authorization: `Bearer ${browserData.token}`}
-      });
+      };
+      const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?user.id=${browserData.cbid}`,requestOptions );
       const data = await response.json();
       return data;
 }
@@ -49,7 +56,7 @@ export async function createOrder(cartList,total,user) {
       id: user.id,
     },
   };
-  const response = await fetch("http://localhost:8000/660/orders", {
+  const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -58,6 +65,12 @@ export async function createOrder(cartList,total,user) {
     body: JSON.stringify(order),
   });
 
+        if(!response.ok){
+        // eslint-disable-next-line no-throw-literal
+        throw {message: response.statusText,
+          status: response.status
+        };
+      }
   // optional: handle response
   const data = await response.json();
 return data;

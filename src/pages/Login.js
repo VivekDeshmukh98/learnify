@@ -2,25 +2,32 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { login } from "../services/authService";
-import {useTitle} from "../../src/hooks/useTitle"
+import { useTitle } from "../../src/hooks/useTitle";
 
 export const Login = () => {
-
-  useTitle('Login');
-  const navigate=useNavigate();
-  const email= useRef();
-  const password= useRef();
+  useTitle("Login");
+  const navigate = useNavigate();
+  const email = useRef();
+  const password = useRef();
   async function handlelogin(event) {
     event.preventDefault();
-    const authDetail={
-      email: email.current.value,
-      password: password.current.value
+
+    try {
+      const authDetail = {
+        email: email.current.value,
+        password: password.current.value,
+      };
+      const data = await login(authDetail);
+      data.accessToken ? navigate("/products") : toast.error(data);
+      toast.success("Logged in Successfully",{
+        position: "top-center"
+      });
+    } catch (e) {
+      toast.error(e.message, {
+        position: "top-center",
+      });
     }
-    const data= await  login(authDetail);
-      data.accessToken ?  navigate("/products") :toast.error(data);
-
   }
-
 
   return (
     <main className="flex justify-center items-start min-h-screen text-gray-900 dark:text-slate-200 px-4 pt-20">
@@ -37,7 +44,7 @@ export const Login = () => {
               Your email
             </label>
             <input
-            ref={email}
+              ref={email}
               type="email"
               id="email"
               placeholder="shubham@example.com"
@@ -59,7 +66,7 @@ export const Login = () => {
               Your password
             </label>
             <input
-            ref={password}
+              ref={password}
               type="password"
               id="password"
               required
@@ -91,4 +98,4 @@ export const Login = () => {
       </section>
     </main>
   );
-}
+};
