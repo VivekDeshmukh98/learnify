@@ -17,6 +17,7 @@ export async function getProductList(searchTerm) {
 export async function getProduct(id) {
   const response = await fetch(`${process.env.REACT_APP_HOST}/444/products/${id}`);
   if (!response.ok) {
+    // eslint-disable-next-line no-throw-literal
     throw { message: response.statusText, status: response.status };
   }
   return response.json();
