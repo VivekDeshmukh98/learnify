@@ -48,7 +48,7 @@ export const Register = () => {
             <input
               type="text"
               id="name"
-              placeholder="Shubham Sarda"
+              placeholder=""
               required
               autoComplete="off"
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm 
@@ -70,7 +70,7 @@ export const Register = () => {
             <input
               type="email"
               id="email"
-              placeholder="shubham@example.com"
+              placeholder=""
               required
               autoComplete="off"
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm 
