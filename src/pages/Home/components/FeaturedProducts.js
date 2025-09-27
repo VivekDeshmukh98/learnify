@@ -9,8 +9,9 @@ export const FeaturedProducts = () => {
   useEffect(()=>{
   async function fetchProducts(){
     try{
- const data= await getFeaturedList();
-     setProducts(data);
+  const data = await getFeaturedList();
+      // Ensure products is an array
+      setProducts(Array.isArray(data) ? data : data.featured_products || []);
     }
     catch(e){
          toast.error(e.message,{
