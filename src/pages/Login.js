@@ -47,7 +47,7 @@ export const Login = () => {
               ref={email}
               type="email"
               id="email"
-              placeholder="shubham@example.com"
+              placeholder=""
               required
               autoComplete="off"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm 
