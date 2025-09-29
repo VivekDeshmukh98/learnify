@@ -31,7 +31,8 @@ const data= await getProductList(searchTerm);
       
     }
     fetchProducts();
-  }, [initialProductList, searchTerm]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ searchTerm]);
 
   return (
     <main>
